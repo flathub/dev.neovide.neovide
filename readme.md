@@ -1,9 +1,15 @@
 ## neovide flatpak
 
-### building
+### install
 
+```shell
+flatpak install flathub dev.neovide.neovide
 ```
-git clone https://github.com/gmanka-flatpaks/dev.neovide.neovide
+
+### build
+
+```shell
+git clone https://github.com/flathub/dev.neovide.neovide
 cd dev.neovide.neovide
 flatpak run org.flatpak.Builder ./build --install-deps-from=flathub --install --force-clean --user dev.neovide.neovide.yml
 ```

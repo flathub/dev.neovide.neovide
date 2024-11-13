@@ -1,5 +1,5 @@
 id: dev.neovide.neovide
-command: neovide
+command: neovide-wrapper
 runtime: org.freedesktop.Sdk
 runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
@@ -20,6 +20,16 @@ modules:
   - modules/fd/fd.yml
   - modules/ripgrep/ripgrep.yml
   - modules/neovim/neovim.yml
+  - name: ide-flatpak-wrapper
+    buildsystem: meson
+    config-opts:
+      - -Deditor_binary=/app/bin/neovide
+      - -Deditor_title=Neovide
+      - -Dprogram_name=neovide-wrapper
+    sources:
+      - type: git
+        branch: master
+        url: https://github.com/flathub/ide-flatpak-wrapper
   - name: neovide
     sources:
       - modules/neovide/neovide-cargo-sources.yml
@@ -63,4 +73,3 @@ cleanup:
   - /include
   - '*.la'
   - '*.a'
-

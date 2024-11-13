@@ -18,8 +18,8 @@ sources:
       name: msgpack
       type: pypi
   - type: file
-    url: https://files.pythonhosted.org/packages/8c/6f/363438dc79d4fa29179ab4dc094e281386853a536324e23fba04563ab226/pynvim-0.5.1-py2.py3-none-any.whl
-    sha256: cf8d9141109e5319388ff06df641c35d2c1bffc763a4da2345a63a71079ce353
+    url: https://files.pythonhosted.org/packages/d2/11/70758ae8d5869241fe5f6ae2083a9af908f037d07e847bec53de0f96c51b/pynvim-0.5.2-py3-none-any.whl
+    sha256: 20b1c5a18c4cddfc480950094d4135f782b1a98c32149ea63e24bbdb7021eb54
     x-checker-data:
       name: pynvim
       packagetype: bdist_wheel

@@ -1,0 +1,16 @@
+--- ./vscode.sh
++++ ./vscode.sh
+@@ -141,11 +141,12 @@
+ fi
+
+ export FLATPAK_IDE_ENV=1
++export SHELL=/bin/bash
+
+ if [ ! -f "${FIRST_RUN}" ]; then
+   touch "${FIRST_RUN}"
+   touch "${SDK_UPDATE}"
+-  exec_vscode "$@" "@FIRST_RUN_README@"
++  exec_vscode "$@"
+ elif [ ! -f "${SDK_UPDATE}" ]; then
+   touch "${SDK_UPDATE}"
+   exec_vscode "$@" "@SDK_UPDATE_README@"

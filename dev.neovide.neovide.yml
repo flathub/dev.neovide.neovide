@@ -20,16 +20,7 @@ modules:
   - modules/fd/fd.yml
   - modules/ripgrep/ripgrep.yml
   - modules/neovim/neovim.yml
-  - name: ide-flatpak-wrapper
-    buildsystem: meson
-    config-opts:
-      - -Deditor_binary=/app/bin/neovide
-      - -Deditor_title=Neovide
-      - -Dprogram_name=neovide-wrapper
-    sources:
-      - type: git
-        commit: 3314b55ccd4ece8810715787e246f8407e20caab
-        url: https://github.com/flathub/ide-flatpak-wrapper
+  - modules/wrapper/wrapper.yml
   - name: neovide
     sources:
       - modules/neovide/neovide-cargo-sources.yml
@@ -73,3 +64,4 @@ cleanup:
   - /include
   - '*.la'
   - '*.a'
+

@@ -38,9 +38,9 @@ modules:
       - type: file
         only-arches:
           - aarch64
-        url: https://github.com/rust-skia/skia-binaries/releases/download/0.75.0/skia-binaries-e7e538647512cab844c3-aarch64-unknown-linux-gnu-gl.tar.gz
+        url: https://github.com/rust-skia/skia-binaries/releases/download/0.75.0/skia-binaries-e7e538647512cab844c3-aarch64-unknown-linux-gnu-gl-textlayout.tar.gz
         dest-filename: skia-binaries.tar.gz
-        sha256: 61205ba15702c8fb35777f1fa5e45483e12528420500ebe765cd48b216f0f0bf
+        sha256: 24ebe148b1d6bf570b5644a90f37aa5348bba1af2dfa731bfbbf6a86f2e18a8e
     build-options:
       append-path: /usr/lib/sdk/rust-stable/bin
       env:

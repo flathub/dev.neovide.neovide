@@ -10,6 +10,10 @@ modules:
       - type: archive
         url: https://github.com/bugaevc/wl-clipboard/archive/v2.2.1.tar.gz
         sha256: 6eb8081207fb5581d1d82c4bcd9587205a31a3d47bea3ebeb7f41aa1143783eb
+        x-checker-data:
+          type: anitya
+          project-id: 49082
+          url-template: https://github.com/bugaevc/wl-clipboard/archive/v$version.tar.gz
   - name: xclip
     sources:
       - type: archive
@@ -86,12 +90,20 @@ modules:
       - type: archive
         url: https://github.com/luvit/luv/releases/download/1.48.0-2/luv-1.48.0-2.tar.gz
         sha256: 2c3a1ddfebb4f6550293a40ee789f7122e97647eede51511f57203de48c03b7a
+        x-checker-data:
+          type: anitya
+          project-id: 21510
+          url-template: https://github.com/luvit/luv/releases/download/$version/luv-$version.tar.gz
     modules:
       - name: libuv
         sources:
           - type: archive
-            url: https://github.com/libuv/libuv/archive/v1.48.0.tar.gz
-            sha256: 8c253adb0f800926a6cbd1c6576abae0bc8eb86a4f891049b72f9e5b7dc58f33
+            url: https://github.com/libuv/libuv/archive/v1.49.2.tar.gz
+            sha256: 388ffcf3370d4cf7c4b3a3205504eea06c4be5f9e80d2ab32d19f8235accc1cf
+            x-checker-data:
+              type: anitya
+              project-id: 10784
+              url-template: https://github.com/libuv/libuv/archive/v$version.tar.gz
   - name: msgpack-c
     buildsystem: cmake-ninja
     sources:
@@ -130,8 +142,12 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/tree-sitter/tree-sitter/archive/c3d45a0153e2985e386dd7172dd55026bb38c9ee.tar.gz
-        sha256: 88961080f0e1413a3975a640e6e879b2233fee3353c68d129332ccf0a04ff8bc
+        url: https://github.com/tree-sitter/tree-sitter/archive/v0.24.5.tar.gz
+        sha256: b5ac48acf5a04fd82ccd4246ad46354d9c434be26c9606233917549711e4252c
+        x-checker-data:
+          type: anitya
+          project-id: 142464
+          url-template: https://github.com/tree-sitter/tree-sitter/archive/v$version.tar.gz
   - name: neovim
     buildsystem: cmake-ninja
     builddir: true

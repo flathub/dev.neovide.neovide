@@ -13,19 +13,19 @@ by default, neovide uses sandboxed nevim, but you can tell neovide to use neovim
 use host nvim >bash
 
    nvim=$(which nvim)
-   echo "neovim-bin = \"flatpak-spawn --host $nvim\"" | tee ~/.var/app/dev.neovide.neovide/config/neovide/config.toml
+   echo "neovim-bin = 'flatpak-spawn --host $nvim'" | tee ~/.var/app/dev.neovide.neovide/config/neovide/config.toml
 
 use nvim from toolbox >bash
 
     toolbox create -d=fedora nvim-fedora-toolbox
     toolbox run -c=nvim-fedora-toolbox sudo dnf install -y neovim git wl-clipboard gcc npm ripgrep fd
-    echo 'neovim-bin = "flatpak-spawn --host toolbox run -c=nvim-fedora-toolbox nvim"' > ~/.var/app/dev.neovide.neovide/config/neovide/config.toml
+    echo "neovim-bin = 'flatpak-spawn --host toolbox run -c=nvim-fedora-toolbox nvim'" > ~/.var/app/dev.neovide.neovide/config/neovide/config.toml
 
 use nvim from distrobox >bash
 
-    distrobox create --image registry.fedoraproject.org/fedora-toolbox:41 nvim-fedora-distrobox
+    distrobox create --pull --image registry.fedoraproject.org/fedora-toolbox:41 nvim-fedora-distrobox
     distrobox enter nvim-fedora-distrobox -- sudo dnf install -y neovim git wl-clipboard gcc npm ripgrep fd
-    echo 'neovim-bin = "flatpak-spawn --host distrobox enter nvim-fedora-distrobox -- nvim"' > ~/.var/app/dev.neovide.neovide/config/neovide/config.toml
+    echo "neovim-bin = 'flatpak-spawn --host distrobox enter nvim-fedora-distrobox -- nvim'" > ~/.var/app/dev.neovide.neovide/config/neovide/config.toml
 
 if you want go back to sandboxed nvim, trash your neovide config >bash
 
@@ -64,15 +64,28 @@ to see what's available >bash
     ls /usr/bin # shared runtime
     ls /app/bin # bundled with this flatpak
 
-to get support for additional languages, you have to install SDK extensions, e.g. >bash
+to get support for additional languages, you have to install SDK extensions >bash
 
     flatpak install flathub org.freedesktop.Sdk.Extension.dotnet
     flatpak install flathub org.freedesktop.Sdk.Extension.golang
-    FLATPAK_ENABLE_SDK_EXT=dotnet,golang flatpak run dev.neovide.neovide
+    flatpak install flathub org.freedesktop.Sdk.Extension.node22
+    flatpak install flathub org.freedesktop.Sdk.Extension.rust-stable
 
 to find other SDKs you can use >bash
 
     flatpak search <TEXT>
+
+here is how to run neovim one time with extensions enabled >bash
+
+    FLATPAK_ENABLE_SDK_EXT=dotnet,golang,node22,rust-stable flatpak run dev.neovide.neovide
+
+enable them forever >bash
+
+    sudo flatpak override --env=FLATPAK_ENABLE_SDK_EXT=dotnet,golang,node22,rust-stable dev.neovide.neovide
+
+disable >bash
+
+    sudo flatpak override --reset dev.neovide.neovide
 
  vim:tw=78:ts=4:ft=help
 

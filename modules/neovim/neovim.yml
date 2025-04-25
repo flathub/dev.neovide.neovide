@@ -98,8 +98,8 @@ modules:
       - name: libuv
         sources:
           - type: archive
-            url: https://github.com/libuv/libuv/archive/v1.50.0.tar.gz
-            sha256: b1ec56444ee3f1e10c8bd3eed16ba47016ed0b94fe42137435aaf2e0bd574579
+            url: https://github.com/libuv/libuv/archive/v1.51.0.tar.gz
+            sha256: 27e55cf7083913bfb6826ca78cde9de7647cded648d35f24163f2d31bb9f51cd
             x-checker-data:
               type: anitya
               project-id: 10784
@@ -156,8 +156,8 @@ modules:
       - -DUSE_BUNDLED=OFF
     sources:
       - type: archive
-        url: https://github.com/neovim/neovim/archive/v0.10.4.tar.gz
-        sha256: 10413265a915133f8a853dc757571334ada6e4f0aa15f4c4cc8cc48341186ca2
+        url: https://github.com/neovim/neovim/archive/v0.11.0.tar.gz
+        sha256: 6826c4812e96995d29a98586d44fbee7c9b2045485d50d174becd6d5242b3319
         x-checker-data:
           is-main-source: true
           type: anitya

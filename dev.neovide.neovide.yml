@@ -28,25 +28,26 @@ modules:
         path: modules/neovide/dev.neovide.neovide.metainfo.xml
       - type: git
         url: https://github.com/neovide/neovide
-        tag: '0.13.3'
+        tag: 0.15.0
+        commit: ef577ca58f4108f46bc049c41fe501785c7f5b41
       - type: file
         only-arches:
           - x86_64
-        url: https://github.com/rust-skia/skia-binaries/releases/download/0.75.0/skia-binaries-e7e538647512cab844c3-x86_64-unknown-linux-gnu-gl-textlayout.tar.gz
+        url: https://github.com/rust-skia/skia-binaries/releases/download/0.84.0/skia-binaries-8df1749a67a2800c2904-x86_64-unknown-linux-gnu-gl-textlayout.tar.gz
         dest-filename: skia-binaries.tar.gz
-        sha256: 58381c2fc492cc8aff4df6462f2bb5c438cc6c73c5b481ad0d855f54d4015bea
+        sha256: 0ec831fef6a891e2dfa0b8cd5426312f370ad414cd7db86a148033c0cec38c98
       - type: file
         only-arches:
           - aarch64
-        url: https://github.com/rust-skia/skia-binaries/releases/download/0.75.0/skia-binaries-e7e538647512cab844c3-aarch64-unknown-linux-gnu-gl-textlayout.tar.gz
+        url: https://github.com/rust-skia/skia-binaries/releases/download/0.84.0/skia-binaries-8df1749a67a2800c2904-aarch64-unknown-linux-gnu-gl-textlayout.tar.gz
         dest-filename: skia-binaries.tar.gz
-        sha256: 24ebe148b1d6bf570b5644a90f37aa5348bba1af2dfa731bfbbf6a86f2e18a8e
+        sha256: b5041b5f6a1b8f20f9d5ad0ca57e29841380e1ab9ebf362828c4cf577cd54cef
     build-options:
       append-path: /usr/lib/sdk/rust-stable/bin
       env:
         CARGO_HOME: /run/build/neovide/cargo
-        SKIA_BINARIES_URL: "file:///run/build/neovide/skia-binaries.tar.gz"
-        FORCE_SKIA_BINARIES_DOWNLOAD: "1"
+        SKIA_BINARIES_URL: file:///run/build/neovide/skia-binaries.tar.gz
+        FORCE_SKIA_BINARIES_DOWNLOAD: '1'
     buildsystem: simple
     build-commands:
       - cargo --frozen fetch

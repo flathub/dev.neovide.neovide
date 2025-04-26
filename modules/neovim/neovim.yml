@@ -148,6 +148,22 @@ modules:
           type: anitya
           project-id: 142464
           url-template: https://github.com/tree-sitter/tree-sitter/archive/v$version.tar.gz
+  - name: utf8proc
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DBUILD_SHARED_LIBS=OFF
+      - -DUTF8PROC_INSTALL=ON
+      - -DUTF8PROC_ENABLE_TESTING=OFF
+    builddir: true
+    sources:
+      - type: git
+        url: https://github.com/JuliaStrings/utf8proc.git
+        tag: v2.10.0
+        commit: a1b99daa2a3393884220264c927a48ba1251a9c6
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
   - name: neovim
     buildsystem: cmake-ninja
     builddir: true
@@ -156,8 +172,8 @@ modules:
       - -DUSE_BUNDLED=OFF
     sources:
       - type: archive
-        url: https://github.com/neovim/neovim/archive/v0.10.4.tar.gz
-        sha256: 10413265a915133f8a853dc757571334ada6e4f0aa15f4c4cc8cc48341186ca2
+        url: https://github.com/neovim/neovim/archive/v0.11.0.tar.gz
+        sha256: 6826c4812e96995d29a98586d44fbee7c9b2045485d50d174becd6d5242b3319
         x-checker-data:
           is-main-source: true
           type: anitya

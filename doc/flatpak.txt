@@ -8,7 +8,7 @@
 ==============================================================================
 *flatpak-nvim* | tell neovide to use host nvim
 
-by default, neovide uses sandboxed nevim, but you can tell neovide to use neovim from host, toolbox or distrobox
+by default, neovide uses sandboxed neovim, but you can tell neovide to use neovim from host, toolbox or distrobox
 
 use host nvim >bash
 

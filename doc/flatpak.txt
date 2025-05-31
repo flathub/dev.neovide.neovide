@@ -87,5 +87,13 @@ disable >bash
 
     sudo flatpak override --reset dev.neovide.neovide
 
+==============================================================================
+*flatpak-var-app* | access to ~/.var/app directory
+
+by default flatpak sandbox restricts neovide from access to ~/.var/app
+directory, to edit files in this directory you should override permissions
+
+    sudo flatpak override dev.neovide.neovide --filesystem=~/.var/app
+
  vim:tw=78:ts=4:ft=help
 

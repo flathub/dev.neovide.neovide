@@ -142,8 +142,8 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/tree-sitter/tree-sitter/archive/v0.25.8.tar.gz
-        sha256: 178b575244d967f4920a4642408dc4edf6de96948d37d7f06e5b78acee9c0b4e
+        url: https://github.com/tree-sitter/tree-sitter/archive/v0.25.9.tar.gz
+        sha256: 024a2478579acebbb8882d7c2c0f0e07fc0aa19a459b48d10469e4abb96cf16e
         x-checker-data:
           type: anitya
           project-id: 142464
@@ -172,8 +172,8 @@ modules:
       - -DUSE_BUNDLED=OFF
     sources:
       - type: archive
-        url: https://github.com/neovim/neovim/archive/v0.11.3.tar.gz
-        sha256: 7f1ce3cc9fe6c93337e22a4bc16bee71e041218cc9177078bd288c4a435dbef0
+        url: https://github.com/neovim/neovim/archive/v0.11.4.tar.gz
+        sha256: 83cf9543bedab8bec8c11cd50ccd9a4bf1570420a914b9a28f83ad100ca6d524
         x-checker-data:
           is-main-source: true
           type: anitya

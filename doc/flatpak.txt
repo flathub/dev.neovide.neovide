@@ -106,6 +106,6 @@ disable >bash
 by default flatpak sandbox restricts neovide from access to ~/.var/app and /tmp directories, so to edit files in this directories you should override permissions
 
     sudo flatpak override dev.neovide.neovide --filesystem=~/.var/app
-    sudo flatpak override dev.neovide.neovide --filesystem=~/.var
+    sudo flatpak override dev.neovide.neovide --filesystem=/tmp
 
  vim:tw=78:ts=4:ft=help

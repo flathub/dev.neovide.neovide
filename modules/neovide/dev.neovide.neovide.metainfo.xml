@@ -34,8 +34,8 @@
   <url type="faq">https://neovide.dev/faq.html</url>
   <url type="vcs-browser">https://github.com/neovide/neovide</url>
   <releases>
-    <release date="2024-07-16" version="0.15.0">
-      <url type="details">https://github.com/neovide/neovide/releases/tag/0.15.0</url>
+    <release date="2024-07-16" version="0.15.1">
+      <url type="details">https://github.com/neovide/neovide/releases/tag/0.15.1</url>
     </release>
   </releases>
   <screenshots>

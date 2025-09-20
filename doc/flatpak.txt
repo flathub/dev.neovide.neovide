@@ -35,7 +35,7 @@ wrapper for nvim from distrobox >bash
     flatpak-spawn --host distrobox enter nvim-fedora-distrobox -- nvim $@
     ''' | tee ~/.var/app/dev.neovide.neovide/data/bin/nvim
 
-tell neovide to acutally use this wrapper >bash
+tell neovide to actually use this wrapper >bash
 
     echo "neovim-bin = '$HOME/.var/app/dev.neovide.neovide/data/bin/nvim'" | tee ~/.var/app/dev.neovide.neovide/config/neovide/config.toml
     chmod +x /home/user/.var/app/dev.neovide.neovide/data/bin/nvim

@@ -103,9 +103,29 @@ disable >bash
 ==============================================================================
 *flatpak-filesystem* | access to ~/.var/app and /tmp
 
-by default flatpak sandbox restricts neovide from access to ~/.var/app and /tmp directories, so to edit files in this directories you should override permissions
+by default flatpak sandbox restricts neovide from access to ~/.var/app, /var/tmp, and /tmp directories, so to edit files in this directories you should override permissions >bash
 
     sudo flatpak override dev.neovide.neovide --filesystem=~/.var/app
+    sudo flatpak override dev.neovide.neovide --filesystem=/var/tmp
     sudo flatpak override dev.neovide.neovide --filesystem=/tmp
+
+==============================================================================
+*flatpak-sudo-edit* | edit configs in /etc with sudo
+
+editing files with sudo requires access to /tmp and to /var/tmp, so make sure you made all overrides from previous step
+
+when all ovirrides done, you can set neovide as your sudo editor >bash
+
+    export SUDO_EDITOR='flatpak run dev.neovide.neovide'
+
+or, if you want cli nvim without gui >bash
+
+    export SUDO_EDITOR='flatpak --command=nvim run dev.neovide.neovide'
+
+now you can try edit some config in /etc >bash
+
+    sudo -e /etc/ssh/sshd_config
+
+enjoy using neovide
 
  vim:tw=78:ts=4:ft=help

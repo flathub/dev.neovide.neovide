@@ -10,7 +10,7 @@ build-options:
 sources:
   - type: git
     url: https://github.com/1player/host-spawn
-    tag: 'v1.6.0'
+    tag: v1.6.2
   - go.mod.yml
 build-commands:
   - go install -mod=vendor

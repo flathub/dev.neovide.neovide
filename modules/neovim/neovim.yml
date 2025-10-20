@@ -36,8 +36,8 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/LuaJIT/LuaJIT/archive/97813fb924edf822455f91a5fbbdfdb349e5984f.tar.gz
-        sha256: cbf1647acbd340c62b9c342dae43290762efa1b26d8bf8457f143fabf8ed86c7
+        url: https://github.com/luajit/luajit/archive/538a82133ad6fddfd0ca64de167c4aca3bc1a2da.tar.gz
+        sha256: 7acbc36be8f21072422eb9a5e5fc468d0eaa55bec1b70260d651e845684621e2
     cleanup:
       - /bin
   - name: lpeg

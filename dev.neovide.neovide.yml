@@ -20,6 +20,7 @@ modules:
   - modules/fd/fd.yml
   - modules/ripgrep/ripgrep.yml
   - modules/neovim/neovim.yml
+  - modules/tree-sitter-parsers/tree-sitter-parsers.yml
   - modules/wrapper/wrapper.yml
   - name: neovide
     sources:

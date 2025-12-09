@@ -142,8 +142,8 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/tree-sitter/tree-sitter/archive/v0.25.9.tar.gz
-        sha256: 024a2478579acebbb8882d7c2c0f0e07fc0aa19a459b48d10469e4abb96cf16e
+        url: https://github.com/tree-sitter/tree-sitter/archive/v0.26.1.tar.gz
+        sha256: c547e2e054ca7220e5b30b18ddf67aec4144cf9288ef5c8ef707c98dbe4951eb
         x-checker-data:
           type: anitya
           project-id: 142464

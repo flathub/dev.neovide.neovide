@@ -4,14 +4,16 @@ sources:
   - fd-cargo-sources.yml
   - type: git
     url: https://github.com/sharkdp/fd
-    tag: v10.2.0
+    tag: v10.3.0
+    commit: d38148f0aabdd073b4080cde770f679f3197b920
+    x-checker-data:
+      type: git
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin
   env:
     CARGO_HOME: /run/build/fd/cargo
 buildsystem: simple
 build-commands:
-  - cargo --frozen fetch
   - cargo --frozen build --release
   - install -Dm755 target/release/fd -t /app/bin
 

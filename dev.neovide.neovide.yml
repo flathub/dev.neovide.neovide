@@ -31,6 +31,8 @@ modules:
         url: https://github.com/neovide/neovide
         tag: 0.15.2
         commit: 0df980b6d4e5887f49925f2b7419b7b0dc5c0b8d
+        x-checker-data:
+          type: git
       - type: file
         only-arches:
           - x86_64
@@ -51,7 +53,6 @@ modules:
         FORCE_SKIA_BINARIES_DOWNLOAD: '1'
     buildsystem: simple
     build-commands:
-      - cargo --frozen fetch
       - cargo --frozen build --release
       - install -Dm755 target/release/neovide -t /app/bin
       - install -Dm644 dev.neovide.neovide.metainfo.xml /app/share/metainfo/${FLATPAK_ID}.metainfo.xml

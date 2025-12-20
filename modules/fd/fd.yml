@@ -14,7 +14,6 @@ build-options:
     CARGO_HOME: /run/build/fd/cargo
 buildsystem: simple
 build-commands:
-  - cargo --frozen fetch
   - cargo --frozen build --release
   - install -Dm755 target/release/fd -t /app/bin
 

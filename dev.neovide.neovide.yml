@@ -29,8 +29,8 @@ modules:
         path: modules/neovide/dev.neovide.neovide.metainfo.xml
       - type: git
         url: https://github.com/neovide/neovide
-        tag: 0.15.2
-        commit: 0df980b6d4e5887f49925f2b7419b7b0dc5c0b8d
+        tag: 0.16.0
+        commit: e636e9091f0a51b9e37496d6b8879934391d63d8
         x-checker-data:
           type: git
       - type: file

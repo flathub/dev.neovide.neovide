@@ -172,8 +172,8 @@ modules:
       - -DUSE_BUNDLED=OFF
     sources:
       - type: archive
-        url: https://github.com/neovim/neovim/archive/v0.11.6.tar.gz
-        sha256: d1c8e3f484ed1e231fd5f48f53b7345b628e52263d5eef489bb8b73ca8d90fca
+        url: https://github.com/neovim/neovim/archive/v0.12.0.tar.gz
+        sha256: 76b4875fc1a4805a807a9fa53ff0c8fb081620137a40fb879b32436e375aeb65
         x-checker-data:
           is-main-source: true
           type: anitya

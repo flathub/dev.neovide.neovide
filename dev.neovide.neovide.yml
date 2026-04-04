@@ -29,22 +29,22 @@ modules:
         path: modules/neovide/dev.neovide.neovide.metainfo.xml
       - type: git
         url: https://github.com/neovide/neovide
-        tag: 0.15.2
-        commit: 0df980b6d4e5887f49925f2b7419b7b0dc5c0b8d
+        tag: 0.16.0
+        commit: e636e9091f0a51b9e37496d6b8879934391d63d8
         x-checker-data:
           type: git
       - type: file
         only-arches:
           - x86_64
-        url: https://github.com/rust-skia/skia-binaries/releases/download/0.88.0/skia-binaries-38fd2e759f27f399c0c5-x86_64-unknown-linux-gnu-gl-pdf-textlayout.tar.gz
+        url: https://github.com/rust-skia/skia-binaries/releases/download/0.93.1/skia-binaries-319323662b1685a112f5-x86_64-unknown-linux-gnu-gl-jpegd-jpege-pdf-textlayout.tar.gz
         dest-filename: skia-binaries.tar.gz
-        sha256: 3bf48e4902c3ccca3c560cdb7d7accd7a22e9f2a4f03a49d7617a8f6a9508038
+        sha256: 6f0834bb033317297ada150fd9e003c9f47fcce82ed43b40b0bc5411e705a49d
       - type: file
         only-arches:
           - aarch64
-        url: https://github.com/rust-skia/skia-binaries/releases/download/0.88.0/skia-binaries-38fd2e759f27f399c0c5-aarch64-unknown-linux-gnu-gl-pdf-textlayout.tar.gz
+        url: https://github.com/rust-skia/skia-binaries/releases/download/0.93.1/skia-binaries-319323662b1685a112f5-aarch64-unknown-linux-gnu-gl-jpegd-jpege-pdf-textlayout.tar.gz
         dest-filename: skia-binaries.tar.gz
-        sha256: 16269a12340f8577fdcf45b713c498b63411a4123c75fea02d9d8d3accb66df9
+        sha256: 10b872d1656ddba12eef9e2866795a5ef02fd6700929545ebb97e21806b5db57
     build-options:
       append-path: /usr/lib/sdk/rust-stable/bin
       env:

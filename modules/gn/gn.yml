@@ -1,0 +1,17 @@
+name: gn
+sources:
+  - type: git
+    url: https://gn.googlesource.com/gn
+    commit: 6e8dcdebbadf4f8aa75e6a4b6e0bdf89dce1513a
+  - type: file
+    path: last_commit_position.h
+build-options:
+  env:
+    CC: gcc
+    CXX: g++
+buildsystem: simple
+build-commands:
+  - python3 build/gen.py --allow-warnings --no-last-commit-position --out-path out
+  - install -Dm644 last_commit_position.h out/last_commit_position.h
+  - ninja -C out
+  - install -Dm755 out/gn /app/bin/gn

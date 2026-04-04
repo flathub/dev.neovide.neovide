@@ -6,6 +6,7 @@ sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
   - org.freedesktop.Sdk.Extension.rust-stable
+  - org.freedesktop.Sdk.Extension.llvm22
 finish-args:
   - --socket=wayland
   - --socket=fallback-x11
@@ -22,35 +23,35 @@ modules:
   - modules/neovim/neovim.yml
   - modules/tree-sitter-parsers/tree-sitter-parsers.yml
   - modules/wrapper/wrapper.yml
+  - modules/gn/gn.yml
   - name: neovide
     sources:
       - modules/neovide/neovide-cargo-sources.yml
       - type: file
         path: modules/neovide/dev.neovide.neovide.metainfo.xml
       - type: git
+        url: https://github.com/rust-skia/skia
+        tag: m145-0.92.0
+        commit: 37e26f9cc16e89c8f28d386e6748e43475f7e4a9
+        dest: skia
+      - type: git
         url: https://github.com/neovide/neovide
         tag: 0.16.1
         commit: 084db1b1412d4975d74a781051c0122e53bb0332
         x-checker-data:
           type: git
-      - type: file
-        only-arches:
-          - x86_64
-        url: https://github.com/rust-skia/skia-binaries/releases/download/0.93.1/skia-binaries-319323662b1685a112f5-x86_64-unknown-linux-gnu-gl-jpegd-jpege-pdf-textlayout.tar.gz
-        dest-filename: skia-binaries.tar.gz
-        sha256: 6f0834bb033317297ada150fd9e003c9f47fcce82ed43b40b0bc5411e705a49d
-      - type: file
-        only-arches:
-          - aarch64
-        url: https://github.com/rust-skia/skia-binaries/releases/download/0.93.1/skia-binaries-319323662b1685a112f5-aarch64-unknown-linux-gnu-gl-jpegd-jpege-pdf-textlayout.tar.gz
-        dest-filename: skia-binaries.tar.gz
-        sha256: 10b872d1656ddba12eef9e2866795a5ef02fd6700929545ebb97e21806b5db57
     build-options:
       append-path: /usr/lib/sdk/rust-stable/bin
       env:
+        PATH: /usr/lib/sdk/llvm22/bin:/usr/lib/sdk/rust-stable/bin:/app/bin:/usr/bin
+        LIBCLANG_PATH: /usr/lib/sdk/llvm22/lib
+        FORCE_SKIA_BUILD: '1'
+        SKIA_GN_ARGS: skia_use_wuffs=false
+        SKIA_GN_COMMAND: /app/bin/gn
+        SKIA_NINJA_COMMAND: /usr/bin/ninja
+        SKIA_SOURCE_DIR: /run/build/neovide/skia
+        SKIA_USE_SYSTEM_LIBRARIES: '1'
         CARGO_HOME: /run/build/neovide/cargo
-        SKIA_BINARIES_URL: file:///run/build/neovide/skia-binaries.tar.gz
-        FORCE_SKIA_BINARIES_DOWNLOAD: '1'
     buildsystem: simple
     build-commands:
       - cargo --frozen build --release
@@ -61,11 +62,13 @@ modules:
       - desktop-file-edit --set-icon="${FLATPAK_ID}" /app/share/applications/${FLATPAK_ID}.desktop
       - desktop-file-edit --set-key=Exec --set-value=neovide-wrapper /app/share/applications/${FLATPAK_ID}.desktop
 cleanup:
-  - /bin/xclip-*file
+  - /share/applications/nvim.desktop
+  - /share/bash-completion
+  - /share/man
   - /lib/pkgconfig
   - /lib/cmake
-  - /share/man
+  - /bin/xclip-*file
+  - /bin/gn
   - /include
   - '*.la'
   - '*.a'
-

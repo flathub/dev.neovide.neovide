@@ -5,8 +5,8 @@ sources:
   - ripgrep-cargo-sources.yml
   - type: git
     url: https://github.com/BurntSushi/ripgrep
-    tag: 15.1.0
-    commit: af60c2de9d85e7f3d81c78601669468cf02dabab
+    tag: 15.2.0
+    commit: e89fff89ac9af12e8d4ce9d5fd07beb408ca730f
     x-checker-data:
       type: git
 build-options:

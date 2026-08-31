@@ -4,8 +4,8 @@ sources:
   - fd-cargo-sources.yml
   - type: git
     url: https://github.com/sharkdp/fd
-    tag: v10.4.2
-    commit: 7027d45303b412be6fa9c09d689cc6276748fb38
+    tag: v10.5.0
+    commit: 4f81778774463bf414a184cbe6d5219ad2229646
     x-checker-data:
       type: git
 build-options:

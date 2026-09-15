@@ -138,9 +138,18 @@ modules:
         sha256: 6945bd3c4aaa83da83d80a045c5563da4edd7d0374c62c0d35aec09eb3014600
   - name: tree-sitter
     no-autogen: true
+    build-options:
+      append-path: /usr/lib/sdk/rust-stable/bin
+      env:
+        CARGO_HOME: /run/build/tree-sitter/cargo
     make-install-args:
       - PREFIX=/app
+    build-commands:
+      - cargo --frozen build --release --package tree-sitter-cli --bin tree-sitter
+    post-install:
+      - install -Dm755 target/release/tree-sitter -t /app/bin
     sources:
+      - tree-sitter-cargo-sources.yml
       - type: archive
         url: https://github.com/tree-sitter/tree-sitter/archive/v0.27.0.tar.gz
         sha256: d35c96e68736bd9569d2757c3cc71052485f33082c3825f1aed9d0e86013a159

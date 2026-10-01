@@ -88,8 +88,8 @@ modules:
       - -DLUA_BUILD_TYPE=System
     sources:
       - type: archive
-        url: https://github.com/luvit/luv/releases/download/1.52.1-0/luv-1.52.1-0.tar.gz
-        sha256: 3e6eb820a3aee034f85f9cce9bd77b5d42f34d128a1ccec877adf28c913577c7
+        url: https://github.com/luvit/luv/releases/download/1.53.0-0/luv-1.53.0-0.tar.gz
+        sha256: ce6260efb974647e7687f54a54a6810bc5eb81cdc14b45b69868a5ea048f96e1
         x-checker-data:
           type: anitya
           project-id: 21510

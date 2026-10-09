@@ -12,8 +12,8 @@ sources:
       name: greenlet
       type: pypi
   - type: file
-    url: https://files.pythonhosted.org/packages/6d/44/ea2100ec54d30c46ee9dba10a3bfb79b655e96c6df237238a3234c75869b/msgpack-1.2.2.tar.gz
-    sha256: 9eb0b0e602064527a045ea28c4f174ed69383587e29cebe28947e3b84106eb2a
+    url: https://files.pythonhosted.org/packages/0a/e7/bb605a7bab2d8425a64b3fa762b39dc1bf1c7e3f11ba6fb5413d6db0ff8c/msgpack-1.2.3.tar.gz
+    sha256: 32edb81a2b5eb7cd7c9d941b2bfbbb082fd2cd09e0e725930316af6b708db186
     x-checker-data:
       name: msgpack
       type: pypi

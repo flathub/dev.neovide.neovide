@@ -36,8 +36,8 @@ modules:
         dest: skia
       - type: git
         url: https://github.com/neovide/neovide
-        tag: 0.16.2
-        commit: d2d6ebd4ee6b8b645c9b9a3b0d5d30923509b2c0
+        tag: 0.17.0
+        commit: e2032b02a314807c9a8a368c7d89a148ed771a82
         x-checker-data:
           type: git
     build-options:

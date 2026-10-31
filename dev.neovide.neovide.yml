@@ -31,9 +31,13 @@ modules:
         path: dev.neovide.neovide.metainfo.xml
       - type: git
         url: https://github.com/rust-skia/skia
-        tag: m145-0.92.0
-        commit: 37e26f9cc16e89c8f28d386e6748e43475f7e4a9
+        tag: m156.5
+        commit: 0746a1afaf750159e1a6aef29992980f4e293585
         dest: skia
+      - type: git
+        url: https://chromium.googlesource.com/chromium/src/third_party/freetype2.git
+        commit: 891f904e2e7b4289f615598cd4b69832f87d2f3a
+        dest: skia/third_party/externals/freetype
       - type: git
         url: https://github.com/neovide/neovide
         tag: 0.17.1

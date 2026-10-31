@@ -28,7 +28,7 @@ modules:
     sources:
       - modules/neovide/neovide-cargo-sources.yml
       - type: file
-        path: modules/neovide/dev.neovide.neovide.metainfo.xml
+        path: dev.neovide.neovide.metainfo.xml
       - type: git
         url: https://github.com/rust-skia/skia
         tag: m145-0.92.0
@@ -36,10 +36,12 @@ modules:
         dest: skia
       - type: git
         url: https://github.com/neovide/neovide
-        tag: 0.16.2
-        commit: d2d6ebd4ee6b8b645c9b9a3b0d5d30923509b2c0
+        tag: 0.17.1
+        commit: 66b945e2665bd648a8e7c56133f0cd906adcab98
         x-checker-data:
           type: git
+          is-main-source: true
+          release-url-template: https://github.com/neovide/neovide/releases/tag/$version
     build-options:
       append-path: /usr/lib/sdk/rust-stable/bin
       env:

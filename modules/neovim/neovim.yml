@@ -188,7 +188,6 @@ modules:
         url: https://github.com/neovim/neovim/archive/v0.12.6.tar.gz
         sha256: 8629fdc5eb951daf89a76f68cad12f2f1e03fab0d539150ba3fe6d177d254b7f
         x-checker-data:
-          is-main-source: true
           type: anitya
           project-id: 9037
           url-template: https://github.com/neovim/neovim/archive/v$version.tar.gz

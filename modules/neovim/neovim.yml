@@ -36,7 +36,8 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/luajit/luajit/archive/fdf2379ccba1eb68ff07f8bc48541568f5bbdfbf.tar.gz
+        url: 
+          https://github.com/luajit/luajit/archive/fdf2379ccba1eb68ff07f8bc48541568f5bbdfbf.tar.gz
         sha256: 4f3fcc8a9a685ec2c449824b26d7c5f4b9c7faff851915cf13e68fb740c25048
     cleanup:
       - /bin
@@ -50,7 +51,8 @@ modules:
       - install -Dm644 -t /app/share/lua/5.1/ re.lua
     sources:
       - type: archive
-        url: https://github.com/neovim/deps/raw/d495ee6f79e7962a53ad79670cb92488abe0b9b4/opt/lpeg-1.1.0.tar.gz
+        url: 
+          https://github.com/neovim/deps/raw/d495ee6f79e7962a53ad79670cb92488abe0b9b4/opt/lpeg-1.1.0.tar.gz
         sha256: 4b155d67d2246c1ffa7ad7bc466c1ea899bbc40fef0257cc9c03cecbaed4352a
   - name: mpack-lua
     no-autogen: true
@@ -88,8 +90,8 @@ modules:
       - -DLUA_BUILD_TYPE=System
     sources:
       - type: archive
-        url: https://github.com/luvit/luv/releases/download/1.53.0-0/luv-1.53.0-0.tar.gz
-        sha256: ce6260efb974647e7687f54a54a6810bc5eb81cdc14b45b69868a5ea048f96e1
+        url: https://github.com/luvit/luv/releases/download/1.53.0-1/luv-1.53.0-1.tar.gz
+        sha256: 569b488d5d31609ea466a6c70e008a42661ec773ea1584d3d766d46280ab7cf4
         x-checker-data:
           type: anitya
           project-id: 21510
@@ -108,7 +110,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://github.com/msgpack/msgpack-c/releases/download/c-6.1.0/msgpack-c-6.1.0.tar.gz
+        url: 
+          https://github.com/msgpack/msgpack-c/releases/download/c-6.1.0/msgpack-c-6.1.0.tar.gz
         sha256: 674119f1a85b5f2ecc4c7d5c2859edf50c0b05e0c10aa0df85eefa2c8c14b796
   - name: unibilium
     no-autogen: true
@@ -124,7 +127,8 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/neovim/libvterm/archive/0a15c6e983b0db7ef8276e0792414a805d01bdaf.tar.gz
+        url: 
+          https://github.com/neovim/libvterm/archive/0a15c6e983b0db7ef8276e0792414a805d01bdaf.tar.gz
         sha256: c4683e7a2d71c04781fd0ab7719a94202800e97a9e091514c16983bb732b0fa7
     cleanup:
       - /bin
@@ -184,7 +188,6 @@ modules:
         url: https://github.com/neovim/neovim/archive/v0.12.6.tar.gz
         sha256: 8629fdc5eb951daf89a76f68cad12f2f1e03fab0d539150ba3fe6d177d254b7f
         x-checker-data:
-          is-main-source: true
           type: anitya
           project-id: 9037
           url-template: https://github.com/neovim/neovim/archive/v$version.tar.gz

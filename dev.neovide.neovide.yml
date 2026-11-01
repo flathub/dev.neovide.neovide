@@ -28,18 +28,24 @@ modules:
     sources:
       - modules/neovide/neovide-cargo-sources.yml
       - type: file
-        path: modules/neovide/dev.neovide.neovide.metainfo.xml
+        path: dev.neovide.neovide.metainfo.xml
       - type: git
         url: https://github.com/rust-skia/skia
-        tag: m145-0.92.0
-        commit: 37e26f9cc16e89c8f28d386e6748e43475f7e4a9
+        tag: m156.5
+        commit: 0746a1afaf750159e1a6aef29992980f4e293585
         dest: skia
       - type: git
+        url: https://chromium.googlesource.com/chromium/src/third_party/freetype2.git
+        commit: 891f904e2e7b4289f615598cd4b69832f87d2f3a
+        dest: skia/third_party/externals/freetype
+      - type: git
         url: https://github.com/neovide/neovide
-        tag: 0.16.2
-        commit: d2d6ebd4ee6b8b645c9b9a3b0d5d30923509b2c0
+        tag: 0.17.1
+        commit: 66b945e2665bd648a8e7c56133f0cd906adcab98
         x-checker-data:
           type: git
+          is-main-source: true
+          release-url-template: https://github.com/neovide/neovide/releases/tag/$version
     build-options:
       append-path: /usr/lib/sdk/rust-stable/bin
       env:

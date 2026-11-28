@@ -40,8 +40,8 @@ modules:
         dest: skia/third_party/externals/freetype
       - type: git
         url: https://github.com/neovide/neovide
-        tag: 0.17.4
-        commit: 4b197d0f9fedfb57506e48a5d98910ffd9e724c7
+        tag: 0.17.5
+        commit: 5f8ee3b04f383d0228771ad004ab339a22ccd1f7
         x-checker-data:
           type: git
           is-main-source: true
